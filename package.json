@@ -1,0 +1,362 @@
+{
+  "name": "gitpilot",
+  "displayName": "GitPilot",
+  "description": "Your GitHub workflow. One cockpit. Zero context switching.",
+  "version": "0.1.0",
+  "publisher": "gitpilot-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitpilot-dev/gitpilot.git"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Source Control",
+    "Productivity"
+  ],
+  "keywords": [
+    "git",
+    "github",
+    "pull requests",
+    "issues",
+    "actions",
+    "stashes",
+    "commits"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "media/gitpilot-logo.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gitpilot-view-container",
+          "title": "GitPilot",
+          "icon": "media/gitpilot-activitybar.svg"
+        }
+      ]
+    },
+    "views": {
+      "gitpilot-view-container": [
+        {
+          "id": "gitpilot.views.dashboard",
+          "name": "Dashboard",
+          "contextualTitle": "GitPilot Dashboard",
+          "icon": "$(dashboard)"
+        },
+        {
+          "id": "gitpilot.views.repositories",
+          "name": "Repositories",
+          "contextualTitle": "GitPilot Repositories",
+          "icon": "$(repo)"
+        },
+        {
+          "id": "gitpilot.views.branches",
+          "name": "Branches",
+          "contextualTitle": "GitPilot Branches",
+          "icon": "$(git-branch)"
+        },
+        {
+          "id": "gitpilot.views.commits",
+          "name": "Commits",
+          "contextualTitle": "GitPilot Commits",
+          "icon": "$(git-commit)"
+        },
+        {
+          "id": "gitpilot.views.stashes",
+          "name": "Stashes",
+          "contextualTitle": "GitPilot Stashes",
+          "icon": "$(archive)"
+        },
+        {
+          "id": "gitpilot.views.pullRequests",
+          "name": "Pull Requests",
+          "contextualTitle": "GitPilot Pull Requests",
+          "icon": "$(git-pull-request)"
+        },
+        {
+          "id": "gitpilot.views.issues",
+          "name": "Issues",
+          "contextualTitle": "GitPilot Issues",
+          "icon": "$(issues)"
+        },
+        {
+          "id": "gitpilot.views.actions",
+          "name": "GitHub Actions",
+          "contextualTitle": "GitPilot Actions",
+          "icon": "$(play-circle)"
+        },
+        {
+          "id": "gitpilot.views.releases",
+          "name": "Releases & Tags",
+          "contextualTitle": "GitPilot Releases",
+          "icon": "$(tag)"
+        },
+        {
+          "id": "gitpilot.views.settings",
+          "name": "Settings & Account",
+          "contextualTitle": "GitPilot Settings",
+          "icon": "$(gear)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "gitpilot.openDashboard",
+        "title": "Open Dashboard",
+        "category": "GitPilot",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "gitpilot.signIn",
+        "title": "Sign In to GitHub",
+        "category": "GitPilot",
+        "icon": "$(sign-in)"
+      },
+      {
+        "command": "gitpilot.signOut",
+        "title": "Sign Out from GitHub",
+        "category": "GitPilot",
+        "icon": "$(sign-out)"
+      },
+      {
+        "command": "gitpilot.setPersonalAccessToken",
+        "title": "Set Personal Access Token",
+        "category": "GitPilot",
+        "icon": "$(key)"
+      },
+      {
+        "command": "gitpilot.refresh",
+        "title": "Refresh All",
+        "category": "GitPilot",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "gitpilot.switchRepository",
+        "title": "Switch Repository",
+        "category": "GitPilot",
+        "icon": "$(repo)"
+      },
+      {
+        "command": "gitpilot.switchBranch",
+        "title": "Switch Branch",
+        "category": "GitPilot",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "gitpilot.createBranch",
+        "title": "Create Branch",
+        "category": "GitPilot",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "gitpilot.createCommit",
+        "title": "Create Commit",
+        "category": "GitPilot",
+        "icon": "$(git-commit)"
+      },
+      {
+        "command": "gitpilot.createStash",
+        "title": "Create Stash",
+        "category": "GitPilot",
+        "icon": "$(archive)"
+      },
+      {
+        "command": "gitpilot.applyStash",
+        "title": "Apply Stash",
+        "category": "GitPilot",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "gitpilot.popStash",
+        "title": "Pop Stash",
+        "category": "GitPilot",
+        "icon": "$(arrow-up)"
+      },
+      {
+        "command": "gitpilot.dropStash",
+        "title": "Drop Stash",
+        "category": "GitPilot",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "gitpilot.viewStashDiff",
+        "title": "View Stash Diff",
+        "category": "GitPilot",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "gitpilot.createPullRequest",
+        "title": "Create Pull Request",
+        "category": "GitPilot",
+        "icon": "$(git-pull-request-create)"
+      },
+      {
+        "command": "gitpilot.viewPullRequests",
+        "title": "View Pull Requests",
+        "category": "GitPilot",
+        "icon": "$(git-pull-request)"
+      },
+      {
+        "command": "gitpilot.viewIssues",
+        "title": "View Issues",
+        "category": "GitPilot",
+        "icon": "$(issues)"
+      },
+      {
+        "command": "gitpilot.viewWorkflowRuns",
+        "title": "View Workflow Runs",
+        "category": "GitPilot",
+        "icon": "$(play-circle)"
+      },
+      {
+        "command": "gitpilot.createRelease",
+        "title": "Create Release",
+        "category": "GitPilot",
+        "icon": "$(tag)"
+      },
+      {
+        "command": "gitpilot.openOnGitHub",
+        "title": "Open Repository on GitHub",
+        "category": "GitPilot",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "gitpilot.openPullRequestOnGitHub",
+        "title": "Open Pull Request on GitHub",
+        "category": "GitPilot",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "gitpilot.openIssueOnGitHub",
+        "title": "Open Issue on GitHub",
+        "category": "GitPilot",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "gitpilot.openWorkflowRunOnGitHub",
+        "title": "Open Workflow Run on GitHub",
+        "category": "GitPilot",
+        "icon": "$(link-external)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "gitpilot.openDashboard",
+          "when": "view == gitpilot.views.dashboard",
+          "group": "navigation"
+        },
+        {
+          "command": "gitpilot.refresh",
+          "when": "view =~ /^gitpilot\\.views\\./",
+          "group": "navigation"
+        },
+        {
+          "command": "gitpilot.createStash",
+          "when": "view == gitpilot.views.stashes",
+          "group": "navigation"
+        },
+        {
+          "command": "gitpilot.createBranch",
+          "when": "view == gitpilot.views.branches",
+          "group": "navigation"
+        },
+        {
+          "command": "gitpilot.createPullRequest",
+          "when": "view == gitpilot.views.pullRequests",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "gitpilot.applyStash",
+          "when": "view == gitpilot.views.stashes && viewItem == stash",
+          "group": "inline"
+        },
+        {
+          "command": "gitpilot.popStash",
+          "when": "view == gitpilot.views.stashes && viewItem == stash",
+          "group": "inline"
+        },
+        {
+          "command": "gitpilot.dropStash",
+          "when": "view == gitpilot.views.stashes && viewItem == stash",
+          "group": "1_danger"
+        },
+        {
+          "command": "gitpilot.viewStashDiff",
+          "when": "view == gitpilot.views.stashes && viewItem == stash",
+          "group": "2_view"
+        },
+        {
+          "command": "gitpilot.switchBranch",
+          "when": "view == gitpilot.views.branches && viewItem == branch",
+          "group": "inline"
+        },
+        {
+          "command": "gitpilot.openPullRequestOnGitHub",
+          "when": "view == gitpilot.views.pullRequests && viewItem == pullRequest",
+          "group": "inline"
+        },
+        {
+          "command": "gitpilot.openIssueOnGitHub",
+          "when": "view == gitpilot.views.issues && viewItem == issue",
+          "group": "inline"
+        },
+        {
+          "command": "gitpilot.openWorkflowRunOnGitHub",
+          "when": "view == gitpilot.views.actions && viewItem == workflowRun",
+          "group": "inline"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "GitPilot",
+      "properties": {
+        "gitpilot.autoRefreshInterval": {
+          "type": "number",
+          "default": 60,
+          "description": "Interval in seconds to automatically refresh GitHub data (0 to disable)."
+        },
+        "gitpilot.confirmDestructiveActions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show confirmation dialog before dropping stashes or discarding changes."
+        },
+        "gitpilot.openDashboardOnStartup": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically open the GitPilot Cockpit Dashboard when VS Code starts."
+        },
+        "gitpilot.cacheTtlSeconds": {
+          "type": "number",
+          "default": 180,
+          "description": "Time in seconds to cache non-sensitive GitHub API read responses."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "build:webview": "npm --prefix webview-ui run build",
+    "build": "npm run compile -- --minify && npm run build:webview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package": "vsce package --no-git-tag-version"
+  },
+  "devDependencies": {
+    "@octokit/rest": "^21.0.2",
+    "@types/node": "^20.14.9",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.1"
+  }
+}
