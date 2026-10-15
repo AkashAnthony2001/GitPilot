@@ -1,6 +1,6 @@
 # GitPilot — GitHub Control Center for VS Code
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/gitpilot-dev/gitpilot/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/AkashAnthony2001/GitPilot/blob/main/LICENSE)
 [![VS Code](https://img.shields.io/badge/VS%20Code-v1.90%2B-blue)](https://code.visualstudio.com/)
 
 > **"Your GitHub workflow. One cockpit. Zero context switching."**

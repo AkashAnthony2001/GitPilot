@@ -3,10 +3,10 @@
   "displayName": "GitPilot",
   "description": "Your GitHub workflow. One cockpit. Zero context switching.",
   "version": "0.1.0",
-  "publisher": "gitpilot-dev",
+  "publisher": "akashanthony",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitpilot-dev/gitpilot.git"
+    "url": "https://github.com/AkashAnthony2001/GitPilot.git"
   },
   "engines": {
     "vscode": "^1.90.0"
